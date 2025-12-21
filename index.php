@@ -20,8 +20,12 @@
           <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-white" href='index.php?p=create'>Tambah Data Mahasiswa</a>
+          <a class="nav-link active text-white" href='index.php?p=create'>+Data Mahasiswa</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" href='index.php?p=tambah'>+Program Studi</a>
+        </li>
+
 
       </ul>
     </div>
@@ -31,11 +35,16 @@
 
     <div class="container my-4">
     <?php
-       $page = isset($_GET['p']) ? $_GET['p'] : 'home';
+       $page = isset($_GET['p']) ? $_GET['p'] :'home';
        if ($page == 'home') include 'home.php';
-       if ($page == 'datamahasiswa') include 'list.php';
-       if ($page == 'create') include 'create.php';
-       if ($page == 'edit') include 'edit.php';
+       if ($page == 'datamahasiswa') include 'mahasiswa/list.php';
+       if ($page == 'create') include 'mahasiswa/create.php';
+       if ($page == 'edit') include 'mahasiswa/edit.php';
+       if ($page == 'programstudi') include 'programstudi/list.php';
+       if ($page == 'tambah') include 'programstudi/create.php';
+       if ($page == 'ubah') include 'programstudi/edit.php';
+       
+       
        
     ?>
     </div>
