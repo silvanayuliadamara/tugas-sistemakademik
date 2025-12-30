@@ -1,3 +1,10 @@
+<?php
+// session = fungsi di php untuk menyimpan data sementara di server tipe datany array menyimpan dATA BOOLEAN, dia hilang jika dihapus secara manual atau meng close browser ny | cookies diismpan di browser user bisa diatur masa aktifnya ada batasny
+session_start();
+if(!isset($_SESSION['login'])) {
+ header("Location: login.php");
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -25,7 +32,9 @@
         <li class="nav-item">
           <a class="nav-link active text-white" href='index.php?p=tambah'>+Program Studi</a>
         </li>
-
+      <li class="nav-item">
+          <a class="nav-link active text-white btn btn-danger" href="logout.php">Log out</a>
+        </li>
 
       </ul>
     </div>
