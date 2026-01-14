@@ -35,7 +35,7 @@
         </form>
 
         <div class="text-center mt-3">
-          <a href="login.php">Sudah punya akun? Login</a>
+          Sudah punya akun? <a href="login.php">Login</a>
         </div>
 
         <?php

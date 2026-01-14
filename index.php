@@ -8,6 +8,9 @@ if(!isset($_SESSION['login'])) {
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>List Data Mahasiswa</title>
@@ -32,10 +35,16 @@ if(!isset($_SESSION['login'])) {
         <li class="nav-item">
           <a class="nav-link active text-white" href='index.php?p=tambah'>+Program Studi</a>
         </li>
-      <li class="nav-item">
-          <a class="nav-link active text-white btn btn-danger" href="logout.php">Log out</a>
+         <li class="nav-item">
+          <a class="nav-link active text-white" href="index.php?p=profil">
+            <i class="bi bi-person-circle"></i>
+            <?= $_SESSION['nama_lengkap'] ?>
+          </a>
         </li>
+         <li class="nav-item">
+         <a class="nav-link fw-semibold btn btn-danger text-white active" href="#" onclick="confirmLogout()">Logout</a>
 
+        </li>
       </ul>
     </div>
   </div>
@@ -52,12 +61,21 @@ if(!isset($_SESSION['login'])) {
        if ($page == 'programstudi') include 'programstudi/list.php';
        if ($page == 'tambah') include 'programstudi/create.php';
        if ($page == 'ubah') include 'programstudi/edit.php';
+       if ($page == 'profil') include 'editprofil.php';
+
        
        
        
     ?>
     </div>
     
+    <script>
+    function confirmLogout() {
+      if (confirm("Apakah Anda yakin ingin logout?")) {
+          window.location.href = "logout.php";
+      }
+    }
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
