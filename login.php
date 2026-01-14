@@ -38,6 +38,11 @@
 
             </form>
 
+          <div class="text-center mt-3">
+            <a href="register.php">Belum punya akun? Register</a>
+          </div>
+
+
             <?php
               if(isset($_POST['email'])){
                   $email = $_POST['email'];
